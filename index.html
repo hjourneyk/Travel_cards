@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journey's Travel Gallery</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-gradient"></div>
+    
+    <header class="main-header">
+        <div class="container">
+            <h1 class="page-title">
+                <i class="fa-solid fa-plane fa-xl"></i>
+                Journey's Travel Gallery
+            </h1>
+            <p class="page-subtitle">Since 2018</p>
+            <div class="audio-control">
+            <div class="audio-controls-container">
+                <button id="audioToggle" class="audio-btn">
+                    <i class="fas fa-play" id="audioIcon"></i>
+                    <span>Music</span>
+                </button>
+                
+                <button id="restartButton" class="audio-btn restart-btn" disabled>
+                    <i class="fas fa-redo-alt"></i>
+                    <span>Restart</span>
+                </button>
+                
+                <div class="volume-control">
+                    <i class="fas fa-volume-up" id="volumeIcon"></i>
+                    <input type="range" id="volumeSlider" min="0" max="100" value="30" class="volume-slider">
+                    <span class="volume-label">Volume</span>
+                </div>
+            </div>
+    
+            <audio id="backgroundAudio" loop>
+                <source src="audio/travel-vibe.mp3" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+            </div>
+        </div>
+
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="cards-grid" id="cardsGrid">
+                
+                <article class="travel-card ocean-destination" data-aos="fade-up">
+                    <div class="card-image-container">
+                        <img src="images/nhaTrang.jpg" alt="Nha Trang Beach Vietnam" class="card-image"
+                             loading="lazy">
+                        <div class="card-overlay">
+                            <i class="fas fa-water destination-icon ocean-icon"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h3 class="card-title">Nha Trang, Vietnam</h3>
+                            <span class="travel-date">April 2024</span>
+                        </div>
+                        <p class="card-description">
+                            Crystal clear waters and pristine beaches made Nha Trang unforgettable. 
+                            Snorkeling in the vibrant coral reefs and enjoying fresh seafood at local markets 
+                            created the perfect tropical getaway.
+                        </p>
+                        <div class="card-tags">
+                            <span class="tag">Beach</span>
+                            <span class="tag">Snorkeling</span>
+                            <span class="tag">Seafood</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="travel-card ocean-destination" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-image-container">
+                        <img src="images/Krabi.jpg" 
+                             alt="Krabi Thailand" 
+                             class="card-image"
+                             loading="lazy">
+                        <div class="card-overlay">
+                            <i class="fas fa-mountain destination-icon ocean-icon"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h3 class="card-title">Krabi, Thailand</h3>
+                            <span class="travel-date">January 2024</span>
+                        </div>
+                        <p class="card-description">
+                            Dramatic limestone cliffs rising from emerald waters created a breathtaking landscape. 
+                            Island hopping to the famous Four Islands and rock climbing adventures made this 
+                            trip an adrenaline-filled paradise.
+                        </p>
+                        <div class="card-tags">
+                            <span class="tag">Island Hopping</span>
+                            <span class="tag">Rock Climbing</span>
+                            <span class="tag">Adventure</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="travel-card city-destination" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-image-container">
+                        <img src="images/hanoi.jpg" 
+                             alt="Hanoi Vietnam Cathedral" 
+                             class="card-image"
+                             loading="lazy">
+                        <div class="card-overlay">
+                            <i class="fas fa-city destination-icon city-icon"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h3 class="card-title">Hanoi, Vietnam</h3>
+                            <span class="travel-date">November 2023</span>
+                        </div>
+                        <p class="card-description">
+                            The bustling streets of Hanoi's Old Quarter offered an authentic Vietnamese experience. 
+                            From steaming bowls of pho to the vibrant night markets, every corner told a story 
+                            of rich culture and history.
+                        </p>
+                        <div class="card-tags">
+                            <span class="tag">Street Food</span>
+                            <span class="tag">Culture</span>
+                            <span class="tag">History</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="travel-card ocean-destination" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-image-container">
+                        <div class="video-container">
+                            <video id="phuquocVideo" muted loop preload="metadata">
+                                <source src="images/phuquoc.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            
+                            <div class="video-controls">
+                                <button class="video-control-btn" id="playPauseBtn">
+                                    <i class="fas fa-play" id="playPauseIcon"></i>
+                                </button>
+                                <button class="video-control-btn" id="muteBtn">
+                                    <i class="fas fa-volume-mute" id="muteIcon"></i>
+                                </button>
+                                <div class="video-progress-container">
+                                    <div class="video-progress-bar">
+                                        <div class="video-progress-fill" id="progressFill"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="video-overlay">
+                                <h3>Video</h3>
+                                <p>Hover to play</p>
+                            </div>
+                        </div>
+                        
+                        <div class="card-overlay">
+                            <i class="fas fa-umbrella-beach destination-icon ocean-icon"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h3 class="card-title">Phu Quoc, Vietnam</h3>
+                            <span class="travel-date">September 2023</span>
+                        </div>
+                        <p class="card-description">
+                        A peaceful retreat on Vietnam’s famous resort island, Phu Quoc. Enjoyed local Vietnamese cuisine and spent time relaxing by the beach.
+                        </p>
+                        <div class="card-tags">
+                            <span class="tag">Paradise</span>
+                            <span class="tag">Sunset</span>
+                            <span class="tag">Cable Car</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="travel-card city-destination" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card-image-container">
+                        <img src="images/Yufuin.jpg" alt="Yufuin hot springs Japan" 
+                             class="card-image"
+                             loading="lazy">
+                        <div class="card-overlay">
+                            <i class="fas fa-hot-tub destination-icon city-icon"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h3 class="card-title">Yufuin, Japan</h3>
+                            <span class="travel-date">March 2023</span>
+                        </div>
+                        <p class="card-description">
+                            A tranquil hot spring town nestled in the mountains of Kyushu. Relaxing onsen baths, 
+                            traditional ryokan stays, and the scenic beauty of Mount Yufu created a perfect 
+                            retreat from city life.
+                        </p>
+                        <div class="card-tags">
+                            <span class="tag">Hot Springs</span>
+                            <span class="tag">Traditional</span>
+                            <span class="tag">Mountains</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="travel-card ocean-destination" data-aos="fade-up" data-aos-delay="500">
+                    <div class="card-image-container">
+                        <img src="images/Danang.jpg" alt="Da Nang night market Vietnam" class="card-image" loading="lazy">
+                        <div class="card-overlay">
+                            <i class="fas fa-dragon destination-icon ocean-icon"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h3 class="card-title">Da Nang, Vietnam</h3>
+                            <span class="travel-date">August 2022</span>
+                        </div>
+                        <p class="card-description">
+                            The perfect blend of beach and culture. From the iconic Dragon Bridge to the 
+                            stunning Marble Mountains, Da Nang offered diverse experiences.
+                        </p>
+                        <div class="card-tags">
+                            <span class="tag">Dragon Bridge</span>
+                            <span class="tag">Marble Mountains</span>
+                            <span class="tag">Beach</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="travel-card ocean-destination" data-aos="fade-up" data-aos-delay="600">
+                    <div class="card-image-container">
+                        <img src="images/Okinawa.jpg" 
+                             alt="Okinawa Island Japan" 
+                             class="card-image"
+                             loading="lazy">
+                        <div class="card-overlay">
+                            <i class="fas fa-fish destination-icon ocean-icon"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h3 class="card-title">Okinawa, Japan</h3>
+                            <span class="travel-date">July 2019</span>
+                        </div>
+                        <p class="card-description">
+                        Island Okinawa offered a relaxing escape. Zamami Island and explored the famous Okinawa Churaumi Aquarium for a fun and refreshing experience.                        
+                        </p>
+                        <div class="card-tags">
+                            <span class="tag">Tropical</span>
+                            <span class="tag">Zamami</span>
+                            <span class="tag">Islands</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="travel-card city-destination" data-aos="fade-up" data-aos-delay="600">
+                    <div class="card-image-container">
+                        <img src="images/Lasvegas.jpg" alt="Lasvegas Grand Canyon" class="card-image" loading="lazy">
+                        <div class="card-overlay">
+                            <i class="fa-solid fa-fire fa-xl city-icon"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h3 class="card-title">LA LasVegas, US</h3>
+                            <span class="travel-date">August 2018</span>
+                        </div>
+                        <p class="card-description">
+                        An unforgettable trip with friends — from Griffith Observatory and Universal Studios to a Vegas pool party, plus breathtaking views at the Grand Canyon and Antelope Canyon.                        
+                        </p>
+                        <div class="card-tags">
+                            <span class="tag">LA</span>
+                            <span class="tag">Muscle Beach</span>
+                            <span class="tag">Grand Canyon </span>
+                            <span class="tag">Griffith Observatory </span>
+                        </div>
+                    </div>
+                </article>
+    
+                <article class="travel-card city-destination" data-aos="fade-up" data-aos-delay="600">
+                    <div class="card-image-container">
+                        <img src="images/spain.jpg" 
+                             alt="Okinawa Japan tropical paradise" 
+                             class="card-image"
+                             loading="lazy">
+                        <div class="card-overlay">
+                            <i class="fa-solid fa-car fa-xl city-icon"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h3 class="card-title">Barcelona, Spain</h3>
+                            <span class="travel-date">June 2017</span>
+                        </div>
+                        <p class="card-description">
+                            Explored Gaudí’s iconic architecture in Barcelona and went on a road trip through southern Spain. Visited charming towns like Seville, Málaga, Ronda, and Toledo, ending the journey in Madrid.                        
+                            <div class="card-tags">
+                            <span class="tag">Barcelona</span>
+                            <span class="tag">Gaudi</span>
+                            <span class="tag">Road Trip</span>
+                            <span class="tag">Saville</span>
+
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 Journey's Travel Gallery.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+
